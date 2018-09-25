@@ -11,6 +11,7 @@ Assets/TreasureChestMaker*
 Assets/PostProcessing*
 Assets/ProCore*
 Resources*
+WebGL*
 
 # Visual Studio cache directory
 .vs/

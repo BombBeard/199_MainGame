@@ -1,0 +1,519 @@
+fileFormatVersion: 2
+guid: 3ab0918fc5c265c4a9da0a47fe143744
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: bigJackpot_GRP
+    100002: body
+    100004: body 1
+    100006: body1
+    100008: //RootNode
+    100010: cave_mesh1
+    100012: caveEntrance_mesh1
+    100014: cigarBody
+    100016: cigarBody 1
+    100018: cigarBody1
+    100020: crab_cartoon_03_export:body
+    100022: crab_cartoon_03_export:crab_GRP
+    100024: crab_cartoon_03_export:eye_left
+    100026: crab_cartoon_03_export:eye_right
+    100028: crab_cartoon_03_export:leg_right_5
+    100030: crab_cartoon_03_export:leg_right_5 1
+    100032: crab_cartoon_03_export:leg_right_6
+    100034: crab_cartoon_03_export:leg_right_6 1
+    100036: crab_cartoon_03_export:leg_right_7
+    100038: crab_cartoon_03_export:leg_right_7 1
+    100040: crab_cartoon_03_export:leg_right_8
+    100042: crab_cartoon_03_export:leg_right_8 1
+    100044: crab_cartoon_03_export:legs_left_GRP_posed
+    100046: crab_cartoon_03_export:legs_right_GRP_posed
+    100048: crab_cartoon_03_export:pincer_left
+    100050: crab_cartoon_03_export:pincer_right
+    100052: crab_GRP
+    100054: crab_GRP1
+    100056: embers
+    100058: embers 1
+    100060: embers 2
+    100062: eye_left
+    100064: eye_left 1
+    100066: eye_right
+    100068: eye_right 1
+    100070: eye_right1
+    100072: leg_right_5
+    100074: leg_right_5 1
+    100076: leg_right_5 2
+    100078: leg_right_5 3
+    100080: leg_right_6
+    100082: leg_right_6 1
+    100084: leg_right_6 2
+    100086: leg_right_6 3
+    100088: leg_right_7
+    100090: leg_right_7 1
+    100092: leg_right_7 2
+    100094: leg_right_7 3
+    100096: leg_right_8
+    100098: leg_right_8 1
+    100100: leg_right_8 2
+    100102: leg_right_8 3
+    100104: leg_right_9
+    100106: legs_left_GRP_posed
+    100108: legs_left_GRP_posed 1
+    100110: legs_right_GRP_posed
+    100112: legs_right_GRP_posed 1
+    100114: light_cigarBody1
+    100116: light_embers
+    100118: light_embers 1
+    100120: light_embers 2
+    100122: light_pCube15
+    100124: light_pCube16
+    100126: light_pCylinder11
+    100128: light_typeMesh2
+    100130: MASH_ReproMesh
+    100132: normalLabel
+    100134: normalLabel 1
+    100136: normalLabel 2
+    100138: pCube15
+    100140: pCube16
+    100142: pCylinder11
+    100144: pCylinder9
+    100146: pincer_left
+    100148: pincer_left 1
+    100150: pincer_right
+    100152: pincer_right 1
+    100154: slots_massive_03_export:group2
+    100156: slots_massive_03_export:group3
+    100158: slots_massive_03_export:moneySpout
+    100160: slots_massive_03_export:pCube10
+    100162: slots_massive_03_export:pCube11
+    100164: slots_massive_03_export:pCube8
+    100166: slots_massive_03_export:pCube9
+    100168: slots_massive_03_export:pSphere2
+    100170: slots_massive_03_export:slots_ReproMesh1
+    100172: spotLight3
+    100174: spotLight4
+    100176: spotLight5
+    100178: spotLight6
+    100180: topHat
+    100182: topHat 1
+    100184: topHatCrabGRP
+    100186: typeMesh2
+    100188: wonkyLabel
+    100190: wonkyLabel 1
+    100192: wonkyLabel 2
+    400000: bigJackpot_GRP
+    400002: body
+    400004: body 1
+    400006: body1
+    400008: //RootNode
+    400010: cave_mesh1
+    400012: caveEntrance_mesh1
+    400014: cigarBody
+    400016: cigarBody 1
+    400018: cigarBody1
+    400020: crab_cartoon_03_export:body
+    400022: crab_cartoon_03_export:crab_GRP
+    400024: crab_cartoon_03_export:eye_left
+    400026: crab_cartoon_03_export:eye_right
+    400028: crab_cartoon_03_export:leg_right_5
+    400030: crab_cartoon_03_export:leg_right_5 1
+    400032: crab_cartoon_03_export:leg_right_6
+    400034: crab_cartoon_03_export:leg_right_6 1
+    400036: crab_cartoon_03_export:leg_right_7
+    400038: crab_cartoon_03_export:leg_right_7 1
+    400040: crab_cartoon_03_export:leg_right_8
+    400042: crab_cartoon_03_export:leg_right_8 1
+    400044: crab_cartoon_03_export:legs_left_GRP_posed
+    400046: crab_cartoon_03_export:legs_right_GRP_posed
+    400048: crab_cartoon_03_export:pincer_left
+    400050: crab_cartoon_03_export:pincer_right
+    400052: crab_GRP
+    400054: crab_GRP1
+    400056: embers
+    400058: embers 1
+    400060: embers 2
+    400062: eye_left
+    400064: eye_left 1
+    400066: eye_right
+    400068: eye_right 1
+    400070: eye_right1
+    400072: leg_right_5
+    400074: leg_right_5 1
+    400076: leg_right_5 2
+    400078: leg_right_5 3
+    400080: leg_right_6
+    400082: leg_right_6 1
+    400084: leg_right_6 2
+    400086: leg_right_6 3
+    400088: leg_right_7
+    400090: leg_right_7 1
+    400092: leg_right_7 2
+    400094: leg_right_7 3
+    400096: leg_right_8
+    400098: leg_right_8 1
+    400100: leg_right_8 2
+    400102: leg_right_8 3
+    400104: leg_right_9
+    400106: legs_left_GRP_posed
+    400108: legs_left_GRP_posed 1
+    400110: legs_right_GRP_posed
+    400112: legs_right_GRP_posed 1
+    400114: light_cigarBody1
+    400116: light_embers
+    400118: light_embers 1
+    400120: light_embers 2
+    400122: light_pCube15
+    400124: light_pCube16
+    400126: light_pCylinder11
+    400128: light_typeMesh2
+    400130: MASH_ReproMesh
+    400132: normalLabel
+    400134: normalLabel 1
+    400136: normalLabel 2
+    400138: pCube15
+    400140: pCube16
+    400142: pCylinder11
+    400144: pCylinder9
+    400146: pincer_left
+    400148: pincer_left 1
+    400150: pincer_right
+    400152: pincer_right 1
+    400154: slots_massive_03_export:group2
+    400156: slots_massive_03_export:group3
+    400158: slots_massive_03_export:moneySpout
+    400160: slots_massive_03_export:pCube10
+    400162: slots_massive_03_export:pCube11
+    400164: slots_massive_03_export:pCube8
+    400166: slots_massive_03_export:pCube9
+    400168: slots_massive_03_export:pSphere2
+    400170: slots_massive_03_export:slots_ReproMesh1
+    400172: spotLight3
+    400174: spotLight4
+    400176: spotLight5
+    400178: spotLight6
+    400180: topHat
+    400182: topHat 1
+    400184: topHatCrabGRP
+    400186: typeMesh2
+    400188: wonkyLabel
+    400190: wonkyLabel 1
+    400192: wonkyLabel 2
+    2100000: typeBlinn75
+    2100002: aiStandardSurface15
+    2100004: cigarBody_aiStandardSurface
+    2100006: aiStandardSurface21
+    2100008: aiStandardSurface19
+    2100010: aiStandardSurface20
+    2100012: aiStandardSurface16
+    2100014: aiStandardSurface17
+    2100016: aiStandardSurface14
+    2100018: slots_massive_03_export_aiStandardSurface3
+    2100020: slots_massive_03_export_slotMachineBody_aiStandardSurface3
+    2100022: slots_massive_03_export_slotMachineBody_aiStandardSurface2
+    2100024: slots_massive_03_export_aiStandardSurface6
+    2100026: lambert1
+    2300000: body
+    2300002: body 1
+    2300004: body1
+    2300006: cave_mesh1
+    2300008: caveEntrance_mesh1
+    2300010: cigarBody
+    2300012: cigarBody 1
+    2300014: cigarBody1
+    2300016: crab_cartoon_03_export:body
+    2300018: crab_cartoon_03_export:eye_left
+    2300020: crab_cartoon_03_export:eye_right
+    2300022: crab_cartoon_03_export:leg_right_5
+    2300024: crab_cartoon_03_export:leg_right_5 1
+    2300026: crab_cartoon_03_export:leg_right_6
+    2300028: crab_cartoon_03_export:leg_right_6 1
+    2300030: crab_cartoon_03_export:leg_right_7
+    2300032: crab_cartoon_03_export:leg_right_7 1
+    2300034: crab_cartoon_03_export:leg_right_8
+    2300036: crab_cartoon_03_export:leg_right_8 1
+    2300038: crab_cartoon_03_export:pincer_left
+    2300040: crab_cartoon_03_export:pincer_right
+    2300042: embers
+    2300044: embers 1
+    2300046: embers 2
+    2300048: eye_left
+    2300050: eye_left 1
+    2300052: eye_right
+    2300054: eye_right 1
+    2300056: eye_right1
+    2300058: leg_right_5
+    2300060: leg_right_5 1
+    2300062: leg_right_5 2
+    2300064: leg_right_5 3
+    2300066: leg_right_6
+    2300068: leg_right_6 1
+    2300070: leg_right_6 2
+    2300072: leg_right_6 3
+    2300074: leg_right_7
+    2300076: leg_right_7 1
+    2300078: leg_right_7 2
+    2300080: leg_right_7 3
+    2300082: leg_right_8
+    2300084: leg_right_8 1
+    2300086: leg_right_8 2
+    2300088: leg_right_8 3
+    2300090: leg_right_9
+    2300092: MASH_ReproMesh
+    2300094: normalLabel
+    2300096: normalLabel 1
+    2300098: normalLabel 2
+    2300100: pCube15
+    2300102: pCube16
+    2300104: pCylinder11
+    2300106: pCylinder9
+    2300108: pincer_left
+    2300110: pincer_left 1
+    2300112: pincer_right
+    2300114: pincer_right 1
+    2300116: slots_massive_03_export:moneySpout
+    2300118: slots_massive_03_export:pCube10
+    2300120: slots_massive_03_export:pCube11
+    2300122: slots_massive_03_export:pCube8
+    2300124: slots_massive_03_export:pCube9
+    2300126: slots_massive_03_export:pSphere2
+    2300128: slots_massive_03_export:slots_ReproMesh1
+    2300130: topHat
+    2300132: topHat 1
+    2300134: typeMesh2
+    2300136: wonkyLabel
+    2300138: wonkyLabel 1
+    2300140: wonkyLabel 2
+    3300000: body
+    3300002: body 1
+    3300004: body1
+    3300006: cave_mesh1
+    3300008: caveEntrance_mesh1
+    3300010: cigarBody
+    3300012: cigarBody 1
+    3300014: cigarBody1
+    3300016: crab_cartoon_03_export:body
+    3300018: crab_cartoon_03_export:eye_left
+    3300020: crab_cartoon_03_export:eye_right
+    3300022: crab_cartoon_03_export:leg_right_5
+    3300024: crab_cartoon_03_export:leg_right_5 1
+    3300026: crab_cartoon_03_export:leg_right_6
+    3300028: crab_cartoon_03_export:leg_right_6 1
+    3300030: crab_cartoon_03_export:leg_right_7
+    3300032: crab_cartoon_03_export:leg_right_7 1
+    3300034: crab_cartoon_03_export:leg_right_8
+    3300036: crab_cartoon_03_export:leg_right_8 1
+    3300038: crab_cartoon_03_export:pincer_left
+    3300040: crab_cartoon_03_export:pincer_right
+    3300042: embers
+    3300044: embers 1
+    3300046: embers 2
+    3300048: eye_left
+    3300050: eye_left 1
+    3300052: eye_right
+    3300054: eye_right 1
+    3300056: eye_right1
+    3300058: leg_right_5
+    3300060: leg_right_5 1
+    3300062: leg_right_5 2
+    3300064: leg_right_5 3
+    3300066: leg_right_6
+    3300068: leg_right_6 1
+    3300070: leg_right_6 2
+    3300072: leg_right_6 3
+    3300074: leg_right_7
+    3300076: leg_right_7 1
+    3300078: leg_right_7 2
+    3300080: leg_right_7 3
+    3300082: leg_right_8
+    3300084: leg_right_8 1
+    3300086: leg_right_8 2
+    3300088: leg_right_8 3
+    3300090: leg_right_9
+    3300092: MASH_ReproMesh
+    3300094: normalLabel
+    3300096: normalLabel 1
+    3300098: normalLabel 2
+    3300100: pCube15
+    3300102: pCube16
+    3300104: pCylinder11
+    3300106: pCylinder9
+    3300108: pincer_left
+    3300110: pincer_left 1
+    3300112: pincer_right
+    3300114: pincer_right 1
+    3300116: slots_massive_03_export:moneySpout
+    3300118: slots_massive_03_export:pCube10
+    3300120: slots_massive_03_export:pCube11
+    3300122: slots_massive_03_export:pCube8
+    3300124: slots_massive_03_export:pCube9
+    3300126: slots_massive_03_export:pSphere2
+    3300128: slots_massive_03_export:slots_ReproMesh1
+    3300130: topHat
+    3300132: topHat 1
+    3300134: typeMesh2
+    3300136: wonkyLabel
+    3300138: wonkyLabel 1
+    3300140: wonkyLabel 2
+    4300000: typeMesh2
+    4300002: leg_right_8
+    4300004: leg_right_7
+    4300006: leg_right_6
+    4300008: leg_right_5
+    4300010: leg_right_9
+    4300012: leg_right_8
+    4300014: leg_right_7
+    4300016: leg_right_6
+    4300018: leg_right_5
+    4300020: pincer_left
+    4300022: pincer_right
+    4300024: eye_right
+    4300026: eye_left
+    4300028: body
+    4300030: body1
+    4300032: eye_right1
+    4300034: crab_cartoon_03_export:leg_right_8
+    4300036: crab_cartoon_03_export:leg_right_7
+    4300038: crab_cartoon_03_export:leg_right_6
+    4300040: crab_cartoon_03_export:leg_right_5
+    4300042: crab_cartoon_03_export:leg_right_8
+    4300044: crab_cartoon_03_export:leg_right_7
+    4300046: crab_cartoon_03_export:leg_right_6
+    4300048: crab_cartoon_03_export:leg_right_5
+    4300050: crab_cartoon_03_export:pincer_left
+    4300052: crab_cartoon_03_export:pincer_right
+    4300054: cigarBody
+    4300056: embers
+    4300058: normalLabel
+    4300060: wonkyLabel
+    4300062: crab_cartoon_03_export:eye_right
+    4300064: crab_cartoon_03_export:eye_left
+    4300066: crab_cartoon_03_export:body
+    4300068: topHat
+    4300070: pCylinder9
+    4300072: pCylinder11
+    4300074: leg_right_8
+    4300076: leg_right_7
+    4300078: leg_right_6
+    4300080: leg_right_5
+    4300082: leg_right_8
+    4300084: leg_right_7
+    4300086: leg_right_6
+    4300088: leg_right_5
+    4300090: pincer_left
+    4300092: pincer_right
+    4300094: cigarBody
+    4300096: embers
+    4300098: normalLabel
+    4300100: wonkyLabel
+    4300102: cigarBody1
+    4300104: embers
+    4300106: normalLabel
+    4300108: wonkyLabel
+    4300110: eye_right
+    4300112: eye_left
+    4300114: body
+    4300116: topHat
+    4300118: slots_massive_03_export:slots_ReproMesh1
+    4300120: slots_massive_03_export:pCube9
+    4300122: slots_massive_03_export:pCube11
+    4300124: slots_massive_03_export:pCube10
+    4300126: slots_massive_03_export:pCube8
+    4300128: slots_massive_03_export:pSphere2
+    4300130: slots_massive_03_export:moneySpout
+    4300132: pCube15
+    4300134: pCube16
+    4300136: MASH_ReproMesh
+    4300138: caveEntrance_mesh1
+    4300140: cave_mesh1
+    10800000: spotLight3
+    10800002: spotLight4
+    10800004: spotLight5
+    10800006: spotLight6
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert1
+    second: {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
