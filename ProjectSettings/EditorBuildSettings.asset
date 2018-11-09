@@ -14,7 +14,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/testingScene.unity
     guid: 7c2cbcbbfedad8e4f897a1d9732508eb
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Lighting Test 02.unity
     guid: 35856bd0c845dc14c89d63374c4bb80a
+  - enabled: 0
+    path: Assets/Scenes/MoreTesting.unity
+    guid: 53ded8ff6c0ff8d489c0759de37bac1f
+  - enabled: 0
+    path: Assets/Scenes/Week_06.unity
+    guid: 9b04acdbc82a76c4ca8c971ee37df670
+  - enabled: 1
+    path: Assets/Scenes/Basement_01.unity
+    guid: 5fb22667c1618f84f9595108cecf4e54
   m_configObjects: {}

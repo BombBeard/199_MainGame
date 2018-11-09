@@ -1,16 +1,83 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
-public class Item : MonoBehaviour {
+[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(Rigidbody))]
+public class Item : MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //private string baseRelicAttributePath = "Assets/Relics/RelicAttributes/Relic_Base.asset";
+
+    [Header("Dependent Objects")]
+    public ItemAttributes attributes;
+    public ItemUI itemUI;
+    public ItemParticleController particleController;
+
+    [Header("Controls")]
+    public bool isInVoid = false;
+
+    public new string name = "";
+    public string description = "";
+
+    //Displayed in the UI
+    public float value;
+    public float growth;
+
+    //Used in calculations only
+    private float modifier;
+
+    Rigidbody rb;
+    public BoxCollider itemCollider;
+    private LayerMask layer = 10;
+
+    private MeshFilter meshFilter; //TODO consider basing measurements off supplied mesh from ItemAttributes
+    private MeshRenderer meshRenderer;
+    Color oldColor;
+    //public Outline outline;
+
+    public List<Cell> cellsInteracting = new List<Cell>();
+    public int numCellsNeeded = 0;
+
+    //Static Player Reference
+    public static GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+
+        gameObject.tag = "Item";
+        gameObject.layer = layer;
+        description = attributes.description;
+        value = attributes.value;
+        growth = attributes.growth;
+        itemUI.gameObject.SetActive(false);
+
+        if (GetComponent<Rigidbody>() != null)
+            rb = GetComponent<Rigidbody>();
+        else
+            rb = gameObject.AddComponent<Rigidbody>();
+        itemCollider = GetComponent<BoxCollider>();
+        itemCollider.size = attributes.mesh.bounds.size;
+    }
+
+    private void Update()
+    {
+        if (transform.position.y < -10f)
+        {
+            transform.position = FindObjectOfType<Player>().transform.position + new Vector3(0, 1, 0) ;
+        }
+        if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= particleController.detectionRadius)
+        {
+            particleController.PlayParticles();
+        }
+        else
+        {
+            particleController.StopParticles();
+        }
+    }
+
+
+
 }

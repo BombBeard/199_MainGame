@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
+  - Cells
+  - VoidManager
   layers:
   - Default
   - TransparentFX
@@ -15,10 +18,10 @@ TagManager:
   - 
   - PostProcessing
   - 
+  - Item
   - 
-  - 
-  - 
-  - 
+  - Surface
+  - Cells
   - 
   - 
   - 

@@ -1,0 +1,166 @@
+fileFormatVersion: 2
+guid: 0616fc990a62a2b4c986ceceaaf58789
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: counter_mesh
+    100002: //RootNode
+    100004: drawer_GRP
+    100006: drawer_mesh
+    100008: drawerHandle_mesh
+    100010: drawerRail_mesh_
+    100012: drawerRail_mesh_1
+    100014: drawerRail_mesh_2
+    100016: drawerRail_mesh_3
+    100018: fridge_GRP
+    100020: fridgeBody_mesh
+    100022: fridgeDoor_GRP
+    100024: fridgeDoor_mesh
+    100026: fridgeHandle_mesh
+    100028: onCounterShelf_mesh
+    100030: onCounterShelfShelf_mesh
+    100032: underCounterCabinet_GRP
+    100034: underCounterCabinet_mesh
+    400000: counter_mesh
+    400002: //RootNode
+    400004: drawer_GRP
+    400006: drawer_mesh
+    400008: drawerHandle_mesh
+    400010: drawerRail_mesh_
+    400012: drawerRail_mesh_1
+    400014: drawerRail_mesh_2
+    400016: drawerRail_mesh_3
+    400018: fridge_GRP
+    400020: fridgeBody_mesh
+    400022: fridgeDoor_GRP
+    400024: fridgeDoor_mesh
+    400026: fridgeHandle_mesh
+    400028: onCounterShelf_mesh
+    400030: onCounterShelfShelf_mesh
+    400032: underCounterCabinet_GRP
+    400034: underCounterCabinet_mesh
+    2100000: silverMetalPhong
+    2100002: handlePhong
+    2100004: counterTop_lamb
+    2300000: counter_mesh
+    2300002: drawer_mesh
+    2300004: drawerHandle_mesh
+    2300006: drawerRail_mesh_
+    2300008: drawerRail_mesh_1
+    2300010: drawerRail_mesh_2
+    2300012: drawerRail_mesh_3
+    2300014: fridgeBody_mesh
+    2300016: fridgeDoor_mesh
+    2300018: fridgeHandle_mesh
+    2300020: onCounterShelf_mesh
+    2300022: onCounterShelfShelf_mesh
+    2300024: underCounterCabinet_mesh
+    3300000: counter_mesh
+    3300002: drawer_mesh
+    3300004: drawerHandle_mesh
+    3300006: drawerRail_mesh_
+    3300008: drawerRail_mesh_1
+    3300010: drawerRail_mesh_2
+    3300012: drawerRail_mesh_3
+    3300014: fridgeBody_mesh
+    3300016: fridgeDoor_mesh
+    3300018: fridgeHandle_mesh
+    3300020: onCounterShelf_mesh
+    3300022: onCounterShelfShelf_mesh
+    3300024: underCounterCabinet_mesh
+    4300000: fridgeBody_mesh
+    4300002: fridgeHandle_mesh
+    4300004: fridgeDoor_mesh
+    4300006: counter_mesh
+    4300008: onCounterShelf_mesh
+    4300010: onCounterShelfShelf_mesh
+    4300012: drawer_mesh
+    4300014: drawerHandle_mesh
+    4300016: underCounterCabinet_mesh
+    4300018: drawerRail_mesh_2
+    4300020: drawerRail_mesh_3
+    4300022: drawerRail_mesh_1
+    4300024: drawerRail_mesh_
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
