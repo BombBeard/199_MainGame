@@ -5,6 +5,8 @@ using UnityEditor;
 
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(ItemParticleController))]
+[RequireComponent(typeof(ItemUI))]
 public class Item : MonoBehaviour
 {
 
@@ -13,7 +15,7 @@ public class Item : MonoBehaviour
     [Header("Dependent Objects")]
     public ItemAttributes attributes;
     public ItemUI itemUI;
-    public ItemParticleController particleController;
+    public ItemParticleController itemParticleController;
 
     [Header("Controls")]
     public bool isInVoid = false;
@@ -34,11 +36,6 @@ public class Item : MonoBehaviour
 
     private MeshFilter meshFilter; //TODO consider basing measurements off supplied mesh from ItemAttributes
     private MeshRenderer meshRenderer;
-    Color oldColor;
-    //public Outline outline;
-
-    public List<Cell> cellsInteracting = new List<Cell>();
-    public int numCellsNeeded = 0;
 
     //Static Player Reference
     public static GameObject player;
@@ -68,13 +65,15 @@ public class Item : MonoBehaviour
         {
             transform.position = FindObjectOfType<Player>().transform.position + new Vector3(0, 1, 0) ;
         }
-        if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= particleController.detectionRadius)
+        if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= itemParticleController.detectionRadius)
         {
-            particleController.PlayParticles();
+            itemUI.gameObject.SetActive(true);
+            itemParticleController.PlayApproach();
         }
         else
         {
-            particleController.StopParticles();
+            itemUI.gameObject.SetActive(false);
+            itemParticleController.StopApproach();
         }
     }
 

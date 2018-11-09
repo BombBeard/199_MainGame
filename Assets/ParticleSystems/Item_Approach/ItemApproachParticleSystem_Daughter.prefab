@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198035371813465678}
   - component: {fileID: 199248288145260276}
   m_Layer: 0
-  m_Name: ItemApproachParticleSystem_Snorlax
+  m_Name: ItemApproachParticleSystem_Daughter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1252,8 +1252,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.84227467, g: 0.8490566, b: 0.68485224, a: 0}
-        key1: {r: 0.7467515, g: 0.85234827, b: 0.9150943, a: 0.80784315}
+        key0: {r: 0.8509804, g: 0.6862745, b: 0.8392736, a: 0}
+        key1: {r: 0.2798149, g: 0.36399695, b: 0.4528302, a: 0.80784315}
         key2: {r: 0, g: 0, b: 0, a: 0.5019608}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -1261,7 +1261,7 @@ ParticleSystem:
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 13493
-        ctime1: 54163
+        ctime1: 40863
         ctime2: 0
         ctime3: 0
         ctime4: 0

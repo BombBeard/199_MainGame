@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 198035371813465678}
   - component: {fileID: 199248288145260276}
   m_Layer: 0
-  m_Name: ItemApproachParticleSystem_Lemon
+  m_Name: ItemApproachParticles_Son
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

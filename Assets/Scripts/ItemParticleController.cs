@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-[RequireComponent(typeof(SphereCollider))]
 public class ItemParticleController : MonoBehaviour {
 
     [Header("Controls")]
@@ -13,7 +12,6 @@ public class ItemParticleController : MonoBehaviour {
     public GameObject itemApproachParticles;
     private ParticleSystem approachParticles;
     public Mesh EmitterShapeMesh;
-    public SphereCollider detectorCollider;
 
 	// Use this for initialization
 	void Start () {
@@ -29,42 +27,16 @@ public class ItemParticleController : MonoBehaviour {
             ParticleSystem.ShapeModule newShape = approachParticles.shape;
             newShape.mesh = EmitterShapeMesh;
         }
-        detectorCollider = GetComponent<SphereCollider>();
-        detectorCollider.radius = detectionRadius;
-        detectorCollider.isTrigger = true;
 	}
 
-    private void OnTriggerEnter(Collider other)
+    public void PlayApproach()
     {
-        if (other.tag == "Player") 
-        {
-            //approachParticles.Play();
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.tag == "Player")
-        {
-            //approachParticles.Stop();
-        }
-    }
-    // Update is called once per frame
-    void Update ()
-    {
-    }
-
-    public void PlayParticles()
-    {
-        Debug.Log(gameObject.name + "Should Play Particles");
         if(!approachParticles.isPlaying)
             approachParticles.Play();
-
     }
-    public void StopParticles()
+    public void StopApproach()
     {
-        Debug.Log(gameObject.name + "Should be stopped");
         if(approachParticles.isPlaying)
             approachParticles.Stop();
-
     }
 }

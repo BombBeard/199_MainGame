@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[ExecuteInEditMode]
 public class ItemUI : MonoBehaviour {
 
     [Header("Controls")]
@@ -10,6 +11,8 @@ public class ItemUI : MonoBehaviour {
     bool isShown = true;
 
     [Header("Components")]
+    [SerializeField]
+    GameObject itemUIPrefab;
     [SerializeField]
     Canvas baseCanvas;
     [SerializeField]
@@ -28,10 +31,17 @@ public class ItemUI : MonoBehaviour {
         if (player == null)
             player = GameObject.FindGameObjectWithTag("MainCamera").gameObject;
 
+        //Instantiate canvas prefab
+        Vector3 tmpPos = gameObject.GetComponentInParent<BoxCollider>().bounds.size;
+        baseCanvas = Instantiate(itemUIPrefab, gameObject.transform.position, Quaternion.identity).GetComponent<Canvas>();
+
+        //Assign references to gameObjects
+
+
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update () {
         if (isShown)
         {
             gameObject.transform.LookAt(player.transform);

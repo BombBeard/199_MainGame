@@ -48,7 +48,6 @@ public class Cell : MonoBehaviour{
             {
                 Item tmp = other.GetComponent<Item>();
                 AddItem(tmp);
-                tmp.cellsInteracting.Add(gameObject.GetComponent<Cell>());
             }
         }
     }
@@ -61,7 +60,6 @@ public class Cell : MonoBehaviour{
             {
                 Item tmp = other.GetComponent<Item>();
                 items.Remove(tmp);
-                tmp.cellsInteracting.Remove(gameObject.GetComponent<Cell>());
             }
         }
     }
