@@ -24,7 +24,6 @@ public class Item : MonoBehaviour
 
     //Displayed in the UI
     public float value;
-    public float growth;
 
     //Used in calculations only
     private float modifier;
@@ -32,6 +31,7 @@ public class Item : MonoBehaviour
     Rigidbody rb;
     public BoxCollider itemCollider;
     private LayerMask layer = 10;
+    [HideInInspector] public bool isHeld = false;
 
     private MeshFilter meshFilter; //TODO consider basing measurements off supplied mesh from ItemAttributes
     private MeshRenderer meshRenderer;
@@ -45,9 +45,10 @@ public class Item : MonoBehaviour
 
         gameObject.tag = "Item";
         gameObject.layer = layer;
+
+        name = attributes.name;
         description = attributes.description;
         value = attributes.value;
-        growth = attributes.growth;
 
         if (GetComponent<Rigidbody>() != null)
             rb = GetComponent<Rigidbody>();
@@ -65,12 +66,23 @@ public class Item : MonoBehaviour
         }
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= itemParticleController.detectionRadius)
         {
-            itemUI.gameObject.SetActive(true);
-            itemParticleController.PlayApproach();
+            if (!isHeld)
+            {
+                //itemUI.gameObject.SetActive(true);
+                itemUI.animator.SetBool("isShown", true);
+                itemParticleController.PlayApproach();
+            }
+            else
+            {
+                //itemUI.gameObject.SetActive(false);
+                itemUI.animator.SetBool("isShown", false);
+                itemParticleController.StopApproach();
+            }
         }
         else
         {
-            itemUI.gameObject.SetActive(false);
+            //itemUI.gameObject.SetActive(false);
+            itemUI.animator.SetBool("isShown", false);
             itemParticleController.StopApproach();
         }
     }

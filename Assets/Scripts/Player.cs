@@ -54,6 +54,7 @@ public class Player : MonoBehaviour {
             {
                 Debug.Log("selectedItem: " + selectedItem.name);
                 Grab(selectedItem.GetComponentInParent<Transform>().gameObject);
+                selectedItem.GetComponent<Item>().isHeld = true;
             }
         }
         else if (heldItem != null && Input.GetMouseButtonDown(0))
@@ -61,6 +62,7 @@ public class Player : MonoBehaviour {
             if (heldItem != null)
             {
                 isDropping = true;
+                heldItem.isHeld = false;
                 vel_1 = heldItem.transform.position;
                 if (heldItem.isInVoid)
                 {

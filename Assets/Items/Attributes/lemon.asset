@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1572834bce6f3db43b6c8e7fce95d5f5, type: 3}
   m_Name: lemon
   m_EditorClassIdentifier: 
-  growth: 1
+  title: Lemon Grenade
+  description: Explodes with citrus-y goodness.
   modifier: 1
   value: 1
-  description: 
   mesh: {fileID: 4300002, guid: cd39e50caea20fa408d28102c43dd5d8, type: 3}

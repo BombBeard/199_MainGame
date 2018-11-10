@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1572834bce6f3db43b6c8e7fce95d5f5, type: 3}
   m_Name: protoMedum
   m_EditorClassIdentifier: 
-  growth: 1
+  title: Proto Medium
+  description: Placeholder. Slightly larger.
   modifier: 1
   value: 1
-  description: 
   mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
