@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[ExecuteInEditMode]
 public class ItemUI : MonoBehaviour {
 
     [Header("Controls")]
@@ -12,13 +11,9 @@ public class ItemUI : MonoBehaviour {
 
     [Header("Components")]
     [SerializeField]
-    GameObject itemUIPrefab;
+    public RectTransform namePanel;
     [SerializeField]
-    Canvas baseCanvas;
-    [SerializeField]
-    RectTransform namePanel;
-    [SerializeField]
-    RectTransform descriptionPanel;
+    public RectTransform descriptionPanel;
 
     [Header("Helpers")]
     [SerializeField]
@@ -26,18 +21,8 @@ public class ItemUI : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        if(baseCanvas == null)
-            baseCanvas = GetComponent<Canvas>();
         if (player == null)
             player = GameObject.FindGameObjectWithTag("MainCamera").gameObject;
-
-        //Instantiate canvas prefab
-        Vector3 tmpPos = gameObject.GetComponentInParent<BoxCollider>().bounds.size;
-        baseCanvas = Instantiate(itemUIPrefab, gameObject.transform.position, Quaternion.identity).GetComponent<Canvas>();
-
-        //Assign references to gameObjects
-
-
     }
 
     // Update is called once per frame

@@ -6,7 +6,6 @@ using UnityEditor;
 [RequireComponent(typeof(BoxCollider))]
 [RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(ItemParticleController))]
-[RequireComponent(typeof(ItemUI))]
 public class Item : MonoBehaviour
 {
 
@@ -14,8 +13,8 @@ public class Item : MonoBehaviour
 
     [Header("Dependent Objects")]
     public ItemAttributes attributes;
-    public ItemUI itemUI;
     public ItemParticleController itemParticleController;
+    public ItemUI itemUI;
 
     [Header("Controls")]
     public bool isInVoid = false;
@@ -38,7 +37,7 @@ public class Item : MonoBehaviour
     private MeshRenderer meshRenderer;
 
     //Static Player Reference
-    public static GameObject player;
+    public GameObject player;
 
     private void Start()
     {
@@ -49,7 +48,6 @@ public class Item : MonoBehaviour
         description = attributes.description;
         value = attributes.value;
         growth = attributes.growth;
-        itemUI.gameObject.SetActive(false);
 
         if (GetComponent<Rigidbody>() != null)
             rb = GetComponent<Rigidbody>();
