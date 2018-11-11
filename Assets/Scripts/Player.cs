@@ -47,7 +47,7 @@ public class Player : MonoBehaviour {
         #region Player Controls
 
         #region Pickup/Place Item
-        if (selectedItem != null && Input.GetMouseButtonDown(0))
+        if (selectedItem != null && Input.GetButtonDown("Fire1"))
         {
             //
             if (heldItem == null)
@@ -57,7 +57,7 @@ public class Player : MonoBehaviour {
                 selectedItem.GetComponent<Item>().isHeld = true;
             }
         }
-        else if (heldItem != null && Input.GetMouseButtonDown(0))
+        else if (heldItem != null && Input.GetButtonDown("Fire1"))
         {
             if (heldItem != null)
             {
@@ -77,13 +77,13 @@ public class Player : MonoBehaviour {
         #endregion
 
         #region Rotate Input
-        else if (Input.GetMouseButton(1) && heldItem != null)
+        else if (Input.GetButtonDown("Fire2") && heldItem != null)
         {
             GetComponent<FirstPersonController>().canRotate = false;
             RotateObject();
         }
 
-        else if (Input.GetMouseButtonUp(1) && heldItem != null)
+        else if (Input.GetButtonUp("Fire2") && heldItem != null)
         {
 
             GetComponent<FirstPersonController>().canRotate = true;

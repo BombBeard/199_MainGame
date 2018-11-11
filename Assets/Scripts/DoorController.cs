@@ -61,12 +61,12 @@ public class DoorController : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (isLocked == false && isOpen == false && Input.GetKeyDown("e"))
+        if (isLocked == false && isOpen == false && Input.GetButtonDown("Interact"))
         {
             isOpen = true;
             animator.SetBool("isOpen", isOpen);
         }
-        else if (isLocked == false && isOpen == true && Input.GetKeyDown("e"))
+        else if (isLocked == false && isOpen == true && Input.GetButtonDown("Interact"))
         {
             isOpen = false;
             animator.SetBool("isOpen", isOpen);
