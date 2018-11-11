@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 95063147252942302}
   - component: {fileID: 222512169445866566}
   m_Layer: 5
-  m_Name: Item_UI_Canvas_ImgBG
+  m_Name: Item_UI_Preview
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
