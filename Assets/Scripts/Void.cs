@@ -15,7 +15,7 @@ using UnityEngine;
 [RequireComponent(typeof(SphereCollider))]
 public class Void : MonoBehaviour
 {
-    public static Void instance = null;
+    public GameManager.ROOM_LIST roomType;
     [Header("Controls")]
     [SerializeField]
     float interactionRadius = 1.75f;
@@ -26,8 +26,6 @@ public class Void : MonoBehaviour
     [SerializeField]
     ParticleSystem vortex;
     [SerializeField]
-    ParticleSystem vortexSub;
-    [SerializeField]
     ParticleSystem ring;
     [SerializeField]
     ParticleSystem center;
@@ -37,24 +35,12 @@ public class Void : MonoBehaviour
     [SerializeField]
     SphereCollider interactionCollider;
 
+    [SerializeField]
+    public DoorController door;
+
 
     static ParticleSystem itemEatenParticles;
 
-
-    private void Awake()
-    {
-        #region Singleton Pattern
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else if (instance != this)
-        {
-            Destroy(gameObject);
-        }
-        DontDestroyOnLoad(gameObject);
-        #endregion
-    }
     // Use this for initialization
     void Start()
     {
@@ -103,6 +89,21 @@ public class Void : MonoBehaviour
         itemEatenParticles.gameObject.transform.position = spawnPos;
         itemEatenParticles.Play();
 
+        
+
         yield return null;
+    }
+
+    public void PlayVoid()
+    {
+        vortex.Play();
+        ring.Play();
+        center.Play();
+    }
+    public void StopVoid()
+    {
+        vortex.Stop();
+        ring.Stop();
+        center.Stop();
     }
 }

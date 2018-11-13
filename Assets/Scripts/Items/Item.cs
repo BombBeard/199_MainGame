@@ -42,12 +42,6 @@ public class Item : MonoBehaviour
     //Static Player Reference
     public GameObject player;
 
-    private void Awake()
-    {
-        itemPreviewAnimator = itemPreview.GetComponent<Animator>();
-        itemDescriptionAnimator = itemDescription.GetComponent<Animator>();
-
-    }
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -65,9 +59,6 @@ public class Item : MonoBehaviour
             rb = gameObject.AddComponent<Rigidbody>();
         itemCollider = GetComponent<BoxCollider>();
         itemCollider.size = attributes.mesh.bounds.size;
-        itemPreviewAnimator.StartPlayback();
-        itemDescriptionAnimator.StartPlayback();
-        itemDescriptionAnimator.SetBool("isShown", false);
         
     }
 
@@ -75,33 +66,24 @@ public class Item : MonoBehaviour
     {
         if (transform.position.y < -10f)
         {
-            transform.position = FindObjectOfType<Player>().transform.position + new Vector3(0, 1, 0) ;
+            transform.position = FindObjectOfType<Player>().transform.position + new Vector3(0, .5f, 0) ;
         }
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= itemParticleController.detectionRadius)
         {
             if (!isHeld)
             {
-                //itemUI.gameObject.SetActive(true);
-                if (!itemPreviewAnimator.GetBool("isShown"))
-                    itemPreviewAnimator.SetBool("isShown", true);
+                itemPreview.PlayFade();
                 itemParticleController.PlayApproach();
             }
             else
             {
-                //itemUI.gameObject.SetActive(false);
-                if (itemPreviewAnimator.GetBool("isShown"))
-                    itemPreviewAnimator.SetBool("isShown", false);
+                itemPreview.StopFade();
                 itemParticleController.StopApproach();
             }
         }
         else
         {
-            //itemUI.gameObject.SetActive(false);
-            if (itemPreviewAnimator.GetBool("isShown"))
-            {
-                itemPreviewAnimator.SetBool("isShown", false);                
-            }
-
+            itemPreview.StopFade();
             itemParticleController.StopApproach();
         }
     }

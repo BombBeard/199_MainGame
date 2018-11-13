@@ -21,19 +21,27 @@ public class ItemUI : MonoBehaviour {
     [SerializeField]
     GameObject player;
     Item parentItem;
-    [HideInInspector] public Animator animator;
+    [HideInInspector] public Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    private void Awake()
+    {
         if (player == null)
             player = GameObject.FindGameObjectWithTag("MainCamera").gameObject;
         parentItem = gameObject.GetComponentInParent<Item>();
         Debug.Log(parentItem.attributes.name);
         namePanel.GetComponent<Text>().text = parentItem.attributes.name;
+        anim = GetComponent<Animator>();
+        Debug.Log("anim = " +anim);
+        
+    }
+
+
+
+    // Use this for initialization
+    void Start () {
         name = parentItem.name;
         descriptionPanel.GetComponent<Text>().text = parentItem.attributes.description;
         desc = parentItem.description;
-        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -44,4 +52,17 @@ public class ItemUI : MonoBehaviour {
             //TODO include subtle animations here
         }
 	}
+
+    //Assumes you check if animation is playing already.
+    public void PlayFade()
+    {
+        if(!anim.GetBool("isShown"))
+            anim.SetBool("isShown", true);
+    }
+    public void StopFade()
+    {
+        if (anim.GetBool("isShown"))
+            anim.SetBool("isShown", false);
+    }
+
 }

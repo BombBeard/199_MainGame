@@ -66,9 +66,14 @@ public class Player : MonoBehaviour {
                 vel_1 = heldItem.transform.position;
                 if (heldItem.isInVoid)
                 {
-                    //TODO Play particle effect for item being eaten
                     StartCoroutine( Void.PlayItemEatenParticle(0, vel_1) );
                     heldItem.gameObject.SetActive(false);
+                    /* Find what room the player is in (GameManager)
+                     * Find what void is being sacrificed to based on that room (VoidManager)
+                     * Use the void reference to a DoorController to increment the number of 
+                     * items sacrificed.
+                     */
+                    VoidManager.GetVoid(GameManager.instance.RoomPlayerIsIn()).door.ItemSacrificied();
 
                     //TODO Add item to pool of eaten items
                 }
