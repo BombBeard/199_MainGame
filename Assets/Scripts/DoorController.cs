@@ -78,36 +78,33 @@ public class DoorController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (isProppedOpen && !isOpen)
+        if (isProppedOpen)
+        {
+            isLocked = false;
+        }
+
+        if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= interactionRadius)
+        {
+            isInteractable = true;
+        }
+        else
+        {
+            isInteractable = false;
+        }
+        if (!isLocked && !isOpen && isInteractable && Input.GetButtonDown("Interact"))
         {
             isOpen = true;
             animator.SetBool("isOpen", isOpen);
         }
-        else {
-
-            if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= interactionRadius)
-            {
-                isInteractable = true;
-            }
-            else
-            {
-                isInteractable = false;
-            }
-            if (!isLocked && !isOpen && isInteractable && Input.GetButtonDown("Interact"))
-            {
-                isOpen = true;
-                animator.SetBool("isOpen", isOpen);
-            }
-            else if (!isLocked && isOpen && isInteractable && Input.GetButtonDown("Interact"))
-            {
-                isOpen = false;
-                animator.SetBool("isOpen", isOpen);
-            }
-            else if (isLocked && !isInteractable)
-            {
-                isOpen = false;
-                animator.SetBool("isOpen", isOpen);
-            }
+        else if (!isLocked && isOpen && isInteractable && Input.GetButtonDown("Interact"))
+        {
+            isOpen = false;
+            animator.SetBool("isOpen", isOpen);
+        }
+        else if (isLocked && !isInteractable)
+        {
+            isOpen = false;
+            animator.SetBool("isOpen", isOpen);
         }
     }
     public void ItemSacrificied()

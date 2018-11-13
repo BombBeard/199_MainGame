@@ -83,9 +83,7 @@ public class Void : MonoBehaviour
      */
     public static IEnumerator PlayItemEatenParticle(int famMember, Vector3 spawnPos)
     {
-        Debug.Log("ADD PARTICLES FOR ITEM EATEN");
         itemEatenParticles.Stop();
-        Debug.Log("trying to spawn at:" + spawnPos);
         itemEatenParticles.gameObject.transform.position = spawnPos;
         itemEatenParticles.Play();
 

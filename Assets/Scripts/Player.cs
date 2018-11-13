@@ -52,7 +52,7 @@ public class Player : MonoBehaviour {
             //
             if (heldItem == null)
             {
-                Debug.Log("selectedItem: " + selectedItem.name);
+                //Debug.Log("selectedItem: " + selectedItem.name);
                 Grab(selectedItem.GetComponentInParent<Transform>().gameObject);
                 selectedItem.GetComponent<Item>().isHeld = true;
             }
@@ -73,7 +73,15 @@ public class Player : MonoBehaviour {
                      * Use the void reference to a DoorController to increment the number of 
                      * items sacrificed.
                      */
-                    VoidManager.GetVoid(GameManager.instance.RoomPlayerIsIn()).door.ItemSacrificied();
+                    Void tmpVoid = VoidManager.GetVoid(GameManager.instance.RoomPlayerIsIn());
+                    if (tmpVoid.door == null)
+                    {
+                        Debug.LogWarning(tmpVoid.name + " has no door associated.");
+                    }
+                    else
+                    {
+                        tmpVoid.door.ItemSacrificied();
+                    }
 
                     //TODO Add item to pool of eaten items
                 }
@@ -177,7 +185,7 @@ public class Player : MonoBehaviour {
         //Calculate velocity just before 
         Vector3 vel_2 = heldItem.transform.position;
 
-        Debug.Log("heldItem: " + heldItem.name);
+        //Debug.Log("heldItem: " + heldItem.name);
         droppedItem = heldItem;
         heldItem.gameObject.layer = 10; //enable raycast
         heldItem.transform.SetParent(null);

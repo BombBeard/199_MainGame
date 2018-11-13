@@ -28,10 +28,10 @@ public class ItemUI : MonoBehaviour {
         if (player == null)
             player = GameObject.FindGameObjectWithTag("MainCamera").gameObject;
         parentItem = gameObject.GetComponentInParent<Item>();
-        Debug.Log(parentItem.attributes.name);
+        //Debug.Log(parentItem.attributes.name);
         namePanel.GetComponent<Text>().text = parentItem.attributes.name;
         anim = GetComponent<Animator>();
-        Debug.Log("anim = " +anim);
+        //Debug.Log("anim = " +anim);
         
     }
 
