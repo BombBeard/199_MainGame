@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4735276178271014}
   - component: {fileID: 198035371813465678}
   - component: {fileID: 199248288145260276}
+  - component: {fileID: 135876687325546572}
   m_Layer: 0
   m_Name: ItemApproachParticles_Son
   m_TagString: Untagged
@@ -41,6 +42,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!135 &135876687325546572
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1660655335847532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198035371813465678
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -671,12 +684,12 @@ ParticleSystem:
     radiusThickness: 1
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
-    m_Rotation: {x: 91, y: 0, z: 0}
+    m_Rotation: {x: 90, y: 0, z: 0}
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 2
     m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
-    m_Mesh: {fileID: 4300000, guid: 03e03ff01fd315d45b3e08750b129772, type: 3}
+    m_MeshNormalOffset: 0.3
+    m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
     m_Sprite: {fileID: 0}
@@ -3649,7 +3662,7 @@ ParticleSystem:
       properties: 0
   LightsModule:
     enabled: 1
-    ratio: 0.3
+    ratio: 0.72
     light: {fileID: 108416313445219344, guid: 0005c3a324ef5aa40af791f1ae8eab82, type: 2}
     randomDistribution: 1
     color: 1
@@ -3658,7 +3671,7 @@ ParticleSystem:
     rangeCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.6
+      scalar: 0.99
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -3711,7 +3724,7 @@ ParticleSystem:
     intensityCurve:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.75
+      scalar: 0.73
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -4590,7 +4603,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
+  - {fileID: 2100000, guid: 4cf3f5752c43ed14a95f8c0f23125a0d, type: 2}
   - {fileID: 2100000, guid: 7911795df27dd464190eed77dda90191, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

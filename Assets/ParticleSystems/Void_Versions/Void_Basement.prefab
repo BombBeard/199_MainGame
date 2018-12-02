@@ -250,14 +250,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d34cf7602de8fb43b47c7de02a09ff3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roomType: 0
-  interactionRadius: 3
+  roomType: 1
+  interactionRadius: 2.25
   vortex: {fileID: 198690128869172822}
   ring: {fileID: 198575034474677774}
   center: {fileID: 198978684310212516}
   itemEatenPrefab: {fileID: 1377803193629186, guid: 0d84bf62a43bd8541b8b086d16244e6f,
     type: 2}
   interactionCollider: {fileID: 0}
+  door: {fileID: 0}
 --- !u!135 &135950936842916384
 SphereCollider:
   m_ObjectHideFlags: 1

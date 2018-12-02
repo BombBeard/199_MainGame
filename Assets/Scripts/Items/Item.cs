@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEditor;
 
 [RequireComponent(typeof(BoxCollider))]
-[RequireComponent(typeof(Rigidbody))]
+//[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(ItemParticleController))]
 public class Item : MonoBehaviour
 {
@@ -44,7 +44,7 @@ public class Item : MonoBehaviour
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        player = GameManager.instance.GetPlayerObject();
 
         gameObject.tag = "Item";
         gameObject.layer = layer;
@@ -52,11 +52,12 @@ public class Item : MonoBehaviour
         name = attributes.name;
         description = attributes.description;
         value = attributes.value;
-
+        
         if (GetComponent<Rigidbody>() != null)
             rb = GetComponent<Rigidbody>();
         else
             rb = gameObject.AddComponent<Rigidbody>();
+           
         itemCollider = GetComponent<BoxCollider>();
         itemCollider.size = attributes.mesh.bounds.size;
         
@@ -66,7 +67,7 @@ public class Item : MonoBehaviour
     {
         if (transform.position.y < -10f)
         {
-            transform.position = FindObjectOfType<Player>().transform.position + new Vector3(0, .5f, 0) ;
+            rb.position = player.transform.position + new Vector3(0, .5f, 0) ;
         }
         if (Vector3.Distance(gameObject.transform.position, player.transform.position) <= itemParticleController.detectionRadius)
         {

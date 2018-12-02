@@ -675,7 +675,7 @@ ParticleSystem:
     m_Scale: {x: 1, y: 1, z: 1}
     placementMode: 2
     m_MeshMaterialIndex: 0
-    m_MeshNormalOffset: 0
+    m_MeshNormalOffset: 0.2
     m_Mesh: {fileID: 4300000, guid: 03e03ff01fd315d45b3e08750b129772, type: 3}
     m_MeshRenderer: {fileID: 0}
     m_SkinnedMeshRenderer: {fileID: 0}
@@ -4590,7 +4590,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 9f3080141f1f64197825663e067f94f8, type: 2}
+  - {fileID: 2100000, guid: df798e14110e4ff46af29c1a51d7248f, type: 2}
   - {fileID: 2100000, guid: 7911795df27dd464190eed77dda90191, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0

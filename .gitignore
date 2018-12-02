@@ -4,6 +4,7 @@
 [Bb]uild/
 [Bb]uiltGame*
 [Bb]uilds/
+Assets/AmplifyShaderEditor*
 Assets/AssetStoreTools*
 Assets/Standard\ Assets*
 Assets/SampleScenes*
@@ -12,6 +13,7 @@ Assets/PostProcessing*
 Assets/ProCore*
 Resources*
 WebGL*
+WindowsBuilds*
 
 # Visual Studio cache directory
 .vs/

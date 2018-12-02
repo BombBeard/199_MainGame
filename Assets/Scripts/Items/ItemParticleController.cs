@@ -12,12 +12,25 @@ public class ItemParticleController : MonoBehaviour {
     public GameObject itemApproachParticles;
     private ParticleSystem approachParticles;
     public Mesh EmitterShapeMesh;
+    public ParticleSystem.MinMaxCurve emissionCurve;
+    public float emissionsMultiplier;
 
 	// Use this for initialization
 	void Start () {
         approachParticles = Instantiate(itemApproachParticles, gameObject.transform.position, Quaternion.identity).GetComponent<ParticleSystem>();
         approachParticles.transform.SetParent(gameObject.transform);
+
+        //Control particle emission based on mesh bounds.size
+        //Find mesh bounds (average the three components or get magnitude...)
+        //multiply emission rate based on editor input. Default set earlier.
+        ParticleSystem.EmissionModule emission = approachParticles.emission;
+        //emission.rateOverTime = emissionCurve;
+        emissionsMultiplier = EmitterShapeMesh.bounds.size.magnitude;
+        emission.rateOverTimeMultiplier = emissionsMultiplier * 2f + 20f;
+
+
         approachParticles.Stop();
+
         if (EmitterShapeMesh == null) {
             ParticleSystem.ShapeModule newShape = approachParticles.shape;
             newShape.mesh = gameObject.GetComponentInChildren<MeshFilter>().mesh;

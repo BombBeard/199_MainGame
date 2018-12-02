@@ -9,7 +9,7 @@ public class DimmerLight : MonoBehaviour {
     [Range(.01f, 4f)] 
     public float intensity = 1f;
     GameObject player;
-    Light light;
+    new Light light;
 
 	// Use this for initialization
 	void Start () {
@@ -32,20 +32,8 @@ public class DimmerLight : MonoBehaviour {
         if (distance > 12)
         {
             //sine pulse
-
             light.intensity = Mathf.Sin(frequency * Time.time) * intensity;
         }
-        //do this if further than 2M
-        /*
-        else if (distance == 12f)
-        {
-            float i = 1f;
-            while(i > 0f)            
-            {
-                light.intensity
-            }
-        }
-        */
         else if (distance >= 4 && distance < 12)
         {
             //growing intensity

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(SphereCollider))]
 [RequireComponent(typeof(Animator))]
 public class DoorController : MonoBehaviour {
 
@@ -30,14 +29,8 @@ public class DoorController : MonoBehaviour {
     Animator animator;
     MeshFilter meshFilter;
     ParticleSystem unlockSystem;
-    SphereCollider sphereCollider;
 
     GameObject player;
-
-    private void Awake()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
 
     // Use this for initialization
     void Start () {
@@ -53,30 +46,9 @@ public class DoorController : MonoBehaviour {
         {
             unlockSystem = new ParticleSystem();
         }
-        if((sphereCollider = GetComponent<SphereCollider>()) == null)
-        {
-            sphereCollider = new SphereCollider();
-        }
-
-        sphereCollider.isTrigger = true;
-        //sphereCollider.radius = 1.4f;
-
-
+        player = GameManager.instance.GetPlayerObject();
 	}
 
-    /*
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<Item>() != null) isLocked = false;
-
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<Item>() != null) isLocked = true;
-    }
-    */
-
-    // Update is called once per frame
     void Update() {
         if (isProppedOpen)
         {
@@ -107,6 +79,7 @@ public class DoorController : MonoBehaviour {
             animator.SetBool("isOpen", isOpen);
         }
     }
+
     public void ItemSacrificied()
     {
         numItemsSold++;

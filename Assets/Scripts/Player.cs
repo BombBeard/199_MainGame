@@ -8,6 +8,7 @@ public class Player : MonoBehaviour {
     #region Editor Fields
     [SerializeField]
     private float scrollMod = .1f;
+    public GameObject jointObject;
     [SerializeField]
     private float reachDist = 1.5f;
 
@@ -32,16 +33,20 @@ public class Player : MonoBehaviour {
     private Vector3 rayDist;
     private LayerMask layer;
 
+    public ConfigurableJoint itemJoint;
+
     private string itemName = "Item";
 
     private void Start()
     {
         //cameraFPV = GetComponent<Camera>();
         layer = LayerMask.GetMask("Item");
+        //itemJoint = GetComponent<SpringJoint>();
     }
 
     
     void Update() {
+        float tmpScroll = 0f;
 
         GetPlayerFocus();
         #region Player Controls
@@ -49,12 +54,16 @@ public class Player : MonoBehaviour {
         #region Pickup/Place Item
         if (selectedItem != null && Input.GetButtonDown("Fire1"))
         {
-            //
+            //Pick up Item
             if (heldItem == null)
             {
                 //Debug.Log("selectedItem: " + selectedItem.name);
                 Grab(selectedItem.GetComponentInParent<Transform>().gameObject);
                 selectedItem.GetComponent<Item>().isHeld = true;
+                //TODO Check Rigidbody stuffs
+                //itemJoint.connectedBody = heldItem.GetComponent<Rigidbody>();
+                //heldItem.GetComponent<Rigidbody>().angularDrag = 30f;
+                //heldItem.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Continuous;
             }
         }
         else if (heldItem != null && Input.GetButtonDown("Fire1"))
@@ -102,16 +111,21 @@ public class Player : MonoBehaviour {
             GetComponent<FirstPersonController>().canRotate = true;
         }
         #endregion
-
         #region Scrollwheel input
-        else if ( (Input.GetAxis("Mouse ScrollWheel")) > 0f && (heldItem != null))
+        else if ( ((tmpScroll = Input.GetAxis("Mouse ScrollWheel")) > 0f && (heldItem != null)))
         {
             heldItem.transform.localPosition = new Vector3( 0f, 0f, Mathf.Clamp((heldItem.transform.localPosition.z + Input.GetAxis("Mouse ScrollWheel")) + scrollMod, 0f,reachDist));
+            //jointObject.transform.localPosition = new Vector3( 0f, 0f, Mathf.Clamp((heldItem.transform.localPosition.z + Input.GetAxis("Mouse ScrollWheel")) + scrollMod, 0f,reachDist));
+            //heldItem.GetComponent<Rigidbody>().MovePosition(new Vector3( 0f, 0f, Mathf.Clamp((heldItem.transform.localPosition.z + Input.GetAxis("Mouse ScrollWheel")) + scrollMod, 0f, reachDist)));
+            //itemJoint.anchor = new Vector3(0f, 0f, Mathf.Clamp((heldItem.transform.localPosition.z + Input.GetAxis("Mouse ScrollWheel")) + scrollMod, 0f, reachDist));
         }
 
         else if( (Input.GetAxis("Mouse ScrollWheel")) < 0f && (heldItem != null))
         {
             heldItem.transform.localPosition = new Vector3( 0f, 0f, Mathf.Clamp((heldItem.transform.localPosition.z + Input.GetAxis("Mouse ScrollWheel")) - scrollMod, 0f, reachDist));
+            //heldItem.GetComponent<Rigidbody>().MovePosition(new Vector3( 0f, 0f, Mathf.Clamp((heldItem.transform.localPosition.z + Input.GetAxis("Mouse ScrollWheel")) - scrollMod, 0f, reachDist)));
+            //itemJoint.anchor = new Vector3(0f, 0f, Mathf.Clamp((heldItem.transform.localPosition.z + Input.GetAxis("Mouse ScrollWheel")) + scrollMod, 0f, reachDist));
+
         }
 
         #endregion
@@ -171,6 +185,7 @@ public class Player : MonoBehaviour {
         //item.gameObject.transform.localPosition = item.GetComponent<Collider>().bounds.center - item.transform.position;
         item.gameObject.transform.localRotation = Quaternion.identity;
         item.GetComponent<Rigidbody>().isKinematic = true;
+        //item.GetComponent<Rigidbody>().useGravity = false;
         //TODO Add Spring to item interaction
         heldItem = item.GetComponent<Item>();
 
@@ -189,10 +204,13 @@ public class Player : MonoBehaviour {
         droppedItem = heldItem;
         heldItem.gameObject.layer = 10; //enable raycast
         heldItem.transform.SetParent(null);
-        //heldItem.GetComponent<Outline>().enabled = false;
         heldItem.GetComponent<Rigidbody>().isKinematic = false;
         //TODO Investigate why velocity suddenly stopped working
         droppedItem.GetComponent<Rigidbody>().AddForce( ((vel_2 - vel_1) / Time.deltaTime), ForceMode.VelocityChange);
+
+        //itemJoint.connectedBody = null;
+        //heldItem.GetComponent<Rigidbody>().collisionDetectionMode = CollisionDetectionMode.Discrete;
+
         heldItem = null;
 
         return droppedItem;
@@ -241,7 +259,8 @@ public class Player : MonoBehaviour {
         Quaternion rotateBy = Quaternion.AngleAxis(-Input.GetAxis("Mouse X") / transform.localScale.x * rotSpeed, objectRelativeUp) * Quaternion.AngleAxis(Input.GetAxis("Mouse Y") / transform.localScale.x * rotSpeed, objectRelativeRight);
         //Finally rotate the object accordingly
         //obj.rigidbody.MoveRotation(obj.rigidbody.rotation * rotateBy);
-        heldItem.transform.Rotate(rotateBy.eulerAngles);
+        heldItem.GetComponent<Rigidbody>().useGravity = true;
+        heldItem.GetComponent<Rigidbody>().MoveRotation(rotateBy);
 
     }
 }

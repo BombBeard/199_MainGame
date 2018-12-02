@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour {
     Dictionary<ROOM_LIST, bool> RoomStatus;
 
     public static GameManager instance = null;
+    [SerializeField]
+    GameObject player;
+
 
     [Header("Player is in...")]
     public roomChecker[] rooms = new roomChecker[3];
@@ -86,6 +89,8 @@ public class GameManager : MonoBehaviour {
             VoidManager.instance.DeactivateVoid(_room);
         }
     }
+
+    public GameObject GetPlayerObject() { return player; }
 
     public ROOM_LIST RoomPlayerIsIn()
     {
