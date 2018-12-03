@@ -42,10 +42,15 @@ public class Item : MonoBehaviour
     //Static Player Reference
     public GameObject player;
 
+    private void OnEnable()
+    {
+
+    }
+
+
     private void Start()
     {
         player = GameManager.instance.GetPlayerObject();
-
         gameObject.tag = "Item";
         gameObject.layer = layer;
 
@@ -60,7 +65,6 @@ public class Item : MonoBehaviour
            
         itemCollider = GetComponent<BoxCollider>();
         itemCollider.size = attributes.mesh.bounds.size;
-        
     }
 
     private void Update()

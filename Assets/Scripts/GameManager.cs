@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour {
 
     Dictionary<ROOM_LIST, bool> RoomStatus;
 
+    public string judgementRoomSceneName = "199_final_01";
+
     public static GameManager instance = null;
     [SerializeField]
     GameObject player;
@@ -41,6 +43,7 @@ public class GameManager : MonoBehaviour {
     [Header("Player is in...")]
     public roomChecker[] rooms = new roomChecker[3];
 
+    public bool isGamePaused = false;
 
     private void Awake()
     {
@@ -90,7 +93,15 @@ public class GameManager : MonoBehaviour {
         }
     }
 
-    public GameObject GetPlayerObject() { return player; }
+    public GameObject GetPlayerObject() {
+        if(player != null)
+            return player;
+        else
+        {
+            player = GameObject.FindGameObjectWithTag("Player");
+            return player;
+        }
+    }
 
     public ROOM_LIST RoomPlayerIsIn()
     {
